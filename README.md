@@ -10,7 +10,7 @@ Atualize o arquivo `secrets.h`, no diretório `main`, com os dados da rede WiFi 
 
 # Uso
 
-Após ligar/reiniciar, o programa aguarda 5 segundos, informa (via serial) as informações sobre o microcontrolador e tenta se conectar à rede WiFi,
+Após ligar/reiniciar, o programa aguarda 5 segundos, informa (via serial) as informações sobre o microcontrolador e tenta se conectar à rede WiFi.
 
-Tendo sucesso na conexão, a cada 10 minutos realiza um teste de comunicação, enviando 100 "pings" (pedidos de ICMP echo). Os pings são espaçados de 500ms e a resposta é aguardada por 400ms. Ao final do teste é apresentado um resumo informando o quantos pacotes foram transmitidos e recebidos, os tempos mínimo, máximo e médio de resposta e a intensidade (RSSI) média do sinal.
+Tendo sucesso na conexão, são realizados testes de comunicação, enviando 100 "pings" (pedidos de ICMP echo), com um tempo de espera de 2 minutos entre cada teste. Os pings são espaçados de 500ms e a resposta é aguardada por até 400ms. Ao final de cada teste é enviado na serial um resumo informando o quantos pacotes foram transmitidos e recebidos, os tempos mínimo, máximo e médio de resposta e a intensidade (RSSI) média do sinal.
 

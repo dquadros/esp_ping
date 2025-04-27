@@ -21,7 +21,7 @@
 #include <esp_wifi.h>
 #include <esp_event.h>
 
-// Descomente para ver o resultado de cada PING
+// Des-comente para ver o resultado de cada PING
 //#define LIST_PING
 
 //  Atualize o arquivo secrets.h com os dados da sua rede!!!
@@ -176,19 +176,19 @@ static void test_on_ping_end(esp_ping_handle_t hdl, void *args)
     esp_ping_get_profile(hdl, ESP_PING_PROF_REQUEST, &transmitted, sizeof(transmitted));
     esp_ping_get_profile(hdl, ESP_PING_PROF_REPLY, &received, sizeof(received));
     esp_ping_get_profile(hdl, ESP_PING_PROF_DURATION, &total_time_ms, sizeof(total_time_ms));
-    printf("%ld packets transmitted, %ld received", transmitted, received);
+    printf("%ld pacotes transmitidos, %ld recebidos", transmitted, received);
     if (received > 0) {
-      printf(", min=%ld ms, max=%ld ms, media=%ld ms", min_time, max_time, total_time/received);
+      printf("; tempos min=%ld ms, max=%ld ms, medio=%ld ms", min_time, max_time, total_time/received);
     }
     if (n_rssi > 0) {
-      printf(", RSSI=%d", soma_rssi/n_rssi);
+      printf("; RSSI medio=%d", soma_rssi/n_rssi);
     }
     printf("\n");
 
-    xSemaphoreGive(sem_ping);
+    xSemaphoreGive(sem_ping); // avisa que terminou
 }
 
-
+// Inicia uma sequencia de pings
 void ping_init() {
   ip_addr_t target_addr;
   ip4addr_aton(ip_target, &target_addr.u_addr.ip4);
@@ -219,6 +219,7 @@ void ping_init() {
   sem_ping = xSemaphoreCreateBinary();
 }
 
+// Ponto de entrada da aplicação
 void app_main(void)
 {
   // Dá um tempo para conectar o terminal
@@ -231,12 +232,13 @@ void app_main(void)
 
   ping_init();
 
+  // Loop principal (eterno enquanto dure)
   while (1) {
       // Faz o teste de pings
     esp_ping_start(ping);
     xSemaphoreTake(sem_ping, portMAX_DELAY);   
 
     // Dá um tempo antes de repetir
-    vTaskDelay(60000 / portTICK_PERIOD_MS);
+    vTaskDelay(120000 / portTICK_PERIOD_MS);
   }
 }
