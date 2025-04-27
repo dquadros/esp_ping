@@ -1,6 +1,7 @@
 /*
   Aplicativo simples para teste da comunicação WiFi
-  Gerado a partir do exemplo ICMP Echo da Espressif (https://github.com/espressif/esp-idf/tree/v5.4.1/examples/protocols/icmp_echo)
+  Gerado a partir do exemplo ICMP Echo da Espressif 
+  (https://github.com/espressif/esp-idf/tree/v5.4.1/examples/protocols/icmp_echo)
   Daniel Quadros, abril/25
 */
 
