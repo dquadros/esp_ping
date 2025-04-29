@@ -27,9 +27,6 @@
 //  Atualize o arquivo secrets.h com os dados da sua rede!!!
 #include "secrets.h"
 
-// Handle para geração dos pings
-static esp_ping_handle_t ping;
-
 // Semáforo para aguardar final dos pings
 static SemaphoreHandle_t sem_ping = NULL;
 
@@ -189,7 +186,8 @@ static void test_on_ping_end(esp_ping_handle_t hdl, void *args)
 }
 
 // Inicia uma sequencia de pings
-void ping_init() {
+esp_ping_handle_t ping_init() {
+  esp_ping_handle_t ping;
   ip_addr_t target_addr;
   ip4addr_aton(ip_target, &target_addr.u_addr.ip4);
   target_addr.type = IPADDR_TYPE_V4;
@@ -215,8 +213,7 @@ void ping_init() {
   n_rssi = 0; 
 
   esp_ping_new_session(&ping_config, &cbs, &ping);
-
-  sem_ping = xSemaphoreCreateBinary();
+  return ping;
 }
 
 // Ponto de entrada da aplicação
@@ -230,13 +227,16 @@ void app_main(void)
   chip_info();
   wifi_connection();
 
-  ping_init();
+  sem_ping = xSemaphoreCreateBinary();
 
   // Loop principal (eterno enquanto dure)
   while (1) {
-      // Faz o teste de pings
+
+    // Faz o teste de pings
+    esp_ping_handle_t ping = ping_init();
     esp_ping_start(ping);
-    xSemaphoreTake(sem_ping, portMAX_DELAY);   
+    xSemaphoreTake(sem_ping, portMAX_DELAY);
+    esp_ping_delete_session(ping);
 
     // Dá um tempo antes de repetir
     vTaskDelay(120000 / portTICK_PERIOD_MS);

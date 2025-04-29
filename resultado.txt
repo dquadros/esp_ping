@@ -1,0 +1,47 @@
+ESP32-C3 Super Mini
+
+100 pacotes transmitidos, 98 recebidos; tempos min=2 ms, max=83 ms, medio=14 ms; RSSI medio=-81
+100 pacotes transmitidos, 98 recebidos; tempos min=2 ms, max=50 ms, medio=14 ms; RSSI medio=-78
+100 pacotes transmitidos, 65 recebidos; tempos min=3 ms, max=76 ms, medio=22 ms; RSSI medio=-79
+100 pacotes transmitidos, 100 recebidos; tempos min=2 ms, max=89 ms, medio=14 ms; RSSI medio=-79
+100 pacotes transmitidos, 100 recebidos; tempos min=2 ms, max=60 ms, medio=10 ms; RSSI medio=-79
+
+ESP32-C3 Core Board
+
+100 pacotes transmitidos, 98 recebidos; tempos min=1 ms, max=182 ms, medio=21 ms; RSSI medio=-68
+100 pacotes transmitidos, 100 recebidos; tempos min=1 ms, max=234 ms, medio=19 ms; RSSI medio=-73
+100 pacotes transmitidos, 100 recebidos; tempos min=2 ms, max=372 ms, medio=35 ms; RSSI medio=-74
+100 pacotes transmitidos, 100 recebidos; tempos min=1 ms, max=69 ms, medio=10 ms; RSSI medio=-78
+100 pacotes transmitidos, 100 recebidos; tempos min=1 ms, max=46 ms, medio=8 ms; RSSI medio=-75
+
+ESP32-C3 Zero
+
+100 pacotes transmitidos, 98 recebidos; tempos min=2 ms, max=49 ms, medio=11 ms; RSSI medio=-70
+100 pacotes transmitidos, 100 recebidos; tempos min=2 ms, max=77 ms, medio=10 ms; RSSI medio=-71
+100 pacotes transmitidos, 98 recebidos; tempos min=1 ms, max=264 ms, medio=19 ms; RSSI medio=-70
+100 pacotes transmitidos, 100 recebidos; tempos min=2 ms, max=50 ms, medio=16 ms; RSSI medio=-70
+100 pacotes transmitidos, 100 recebidos; tempos min=1 ms, max=80 ms, medio=15 ms; RSSI medio=-70
+
+ESP32-C3 Super Mini Antena Alterada
+
+100 pacotes transmitidos, 98 recebidos; tempos min=0 ms, max=33 ms, medio=7 ms; RSSI medio=-61
+100 pacotes transmitidos, 100 recebidos; tempos min=1 ms, max=48 ms, medio=12 ms; RSSI medio=-61
+100 pacotes transmitidos, 100 recebidos; tempos min=1 ms, max=125 ms, medio=15 ms; RSSI medio=-60
+100 pacotes transmitidos, 100 recebidos; tempos min=1 ms, max=134 ms, medio=18 ms; RSSI medio=-62
+100 pacotes transmitidos, 100 recebidos; tempos min=1 ms, max=287 ms, medio=25 ms; RSSI medio=-60
+
+XIAO ESP32-C3 Antena padrão
+
+100 pacotes transmitidos, 97 recebidos; tempos min=1 ms, max=99 ms, medio=10 ms; RSSI medio=-68
+100 pacotes transmitidos, 99 recebidos; tempos min=1 ms, max=185 ms, medio=14 ms; RSSI medio=-65
+100 pacotes transmitidos, 100 recebidos; tempos min=1 ms, max=125 ms, medio=15 ms; RSSI medio=-66
+100 pacotes transmitidos, 100 recebidos; tempos min=1 ms, max=40 ms, medio=9 ms; RSSI medio=-66
+100 pacotes transmitidos, 99 recebidos; tempos min=1 ms, max=68 ms, medio=15 ms; RSSI medio=-67
+
+XIAO ESP32-C3 Antena Rod
+
+100 pacotes transmitidos, 96 recebidos; tempos min=0 ms, max=38 ms, medio=9 ms; RSSI medio=-64
+100 pacotes transmitidos, 100 recebidos; tempos min=1 ms, max=36 ms, medio=9 ms; RSSI medio=-70
+100 pacotes transmitidos, 100 recebidos; tempos min=1 ms, max=149 ms, medio=17 ms; RSSI medio=-69
+100 pacotes transmitidos, 100 recebidos; tempos min=1 ms, max=55 ms, medio=9 ms; RSSI medio=-69
+100 pacotes transmitidos, 100 recebidos; tempos min=1 ms, max=61 ms, medio=13 ms; RSSI medio=-70
